@@ -31,7 +31,7 @@ export const SaveList = () => {
   }
 
   return (
-      <div className={`flex flex-row  items-center justify-center p-[1.20rem] z-0 bg-white `}>
+      <div className={`flex flex-row  items-center justify-baseline p-[1.20rem] z-0 bg-white `}>
 
         <input
             autoComplete="off"

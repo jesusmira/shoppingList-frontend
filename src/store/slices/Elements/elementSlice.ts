@@ -1,19 +1,5 @@
 import { PayloadAction, createSlice} from '@reduxjs/toolkit';
 
-
-// interface Element {
-//             _id: string;
-//             elementos: [
-//                 {
-//                     _id: string;
-//                     name: string;
-//                     note: string;
-//                     image: string;
-//                     category: string;
-//                     __v: number;
-//                 }
-//             ]
-// }
 interface Item {
     _id: number;
     name: string;

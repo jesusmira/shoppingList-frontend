@@ -14,13 +14,18 @@ interface ItemsState {
   completed: boolean;
   }
   
+  
   const initialState: ItemsState = {
     categories: [],
     products: [],
     nameList: '',
     dateCreation: '',
-    completed: false
+    completed: false,
   };
+
+  
+  
+
   
   export const listProductSlice = createSlice({
     name: 'listProduct',
@@ -56,6 +61,7 @@ interface ItemsState {
         resetState() {
           return initialState;
         },
+
     },
   }); 
 

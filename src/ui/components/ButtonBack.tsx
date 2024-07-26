@@ -1,12 +1,14 @@
 import { useAppDispatch } from "../../hooks/dbstore";
+import { showAllHistory } from "../../store/slices/HistoryPanel";
 import { showShoppingList } from "../../store/slices/rightPanel/rightPanel";
 
-export const ButtonBack = () => {
+export const ButtonBack = ({option}: {option: number}) => {
 
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    dispatch( showShoppingList())
+    (option === 1)? dispatch( showShoppingList()) : dispatch( showAllHistory());
+    
   }
 
   return (

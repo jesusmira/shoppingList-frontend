@@ -1,13 +1,17 @@
 
+import { HistoryAll, HistoryOne } from "../components/HistoryPage";
+import { useAppSelector } from "../hooks/dbstore";
 
-export const HistoryPage = () => {
+export const HistoryPage:React.FC = () => {
 
- 
+  // const lista = useGroupedProducts();
+  const { showHistory } = useAppSelector((state) => state.history);
 
   return (
-    <section className=" md:w-[85%] pl-24 sm:pr-14 lg:pr-44"> 
-      <div className="text-3xl flex flex-col w-[68%] mt-8">HistoryPage</div>
-     
-    </section>
+          <>
+            {
+              ( showHistory === 1)? <HistoryAll /> : <HistoryOne />
+            }
+          </>
   )
 }

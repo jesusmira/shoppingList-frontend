@@ -1,21 +1,24 @@
 import { Action, ThunkAction, configureStore, combineReducers } from '@reduxjs/toolkit'
-import { counterReducer, elementReducer, rightPanelReducer, listProductReducer, isMobileReducer
+import { counterReducer, elementReducer, rightPanelReducer, listProductReducer, isMobileReducer, listHistoryReducer
  } from '.'
  import { persistStore, persistReducer } from 'redux-persist';
  import storage from 'redux-persist/lib/storage';
+import { HistoryPanelReducer } from './slices/HistoryPanel';
 
 const rootReducer = combineReducers({
   counter: counterReducer,
   Elements: elementReducer,
   rightPanel: rightPanelReducer,
   listProduct: listProductReducer,
-  isMobile: isMobileReducer
+  isMobile: isMobileReducer,
+  items: listHistoryReducer,
+  history: HistoryPanelReducer
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['rightPanel', 'isMobile', 'Elements', 'listProduct', 'counter'],
+  blacklist: ['rightPanel', 'isMobile', 'Elements', 'listProduct', 'counter','history'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
